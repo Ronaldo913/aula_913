@@ -1,25 +1,13 @@
+import 'package:aula_913/domain/pacote_turistico.dart';
+import 'package:aula_913/pages/pacote_detalhes.dart';
 import 'package:flutter/material.dart';
 
 class CardPacoteTuristico extends StatefulWidget {
-  final String imagem;
-  final String titulo;
-  final int numDiarias;
-  final int numPessoas;
-  final int numParcelas;
-  final String transporte;
-  final double precoAtual;
-  final double precoAntigo;
+  final PacoteTuristico pacoteTuristico;
 
   const CardPacoteTuristico({
     Key? key,
-    required this.imagem,
-    required this.titulo,
-    required this.numDiarias,
-    required this.numPessoas,
-    required this.numParcelas,
-    required this.transporte,
-    required this.precoAtual,
-    required this.precoAntigo,
+    required this.pacoteTuristico,
   }) : super(key: key);
 
   @override
@@ -29,58 +17,74 @@ class CardPacoteTuristico extends StatefulWidget {
 class _CardPacoteTuristicoState extends State<CardPacoteTuristico> {
   @override
   Widget build(BuildContext context) {
-    return Card(
-      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
-      child: Column(
-        children: [
-          buildImage(),
-          Padding(
-            padding: const EdgeInsets.all(16),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  widget.titulo,
-                  style: TextStyle(
-                    fontSize: 21,
-                    fontWeight: FontWeight.bold,
+    return InkWell(
+      onTap: () {
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) {
+              return PacoteDetalhes(
+                pacoteTuristico: widget.pacoteTuristico,
+              );
+            },
+          ),
+        );
+      },
+      child: Card(
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(8),
+        ),
+        child: Column(
+          children: [
+            buildImage(),
+            Padding(
+              padding: const EdgeInsets.all(16),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    widget.pacoteTuristico.titulo,
+                    style: const TextStyle(
+                      fontSize: 21,
+                      fontWeight: FontWeight.bold,
+                    ),
                   ),
-                ),
-                SizedBox(height: 8),
-                Text(widget.transporte),
-                SizedBox(height: 8),
-                Row(
-                  children: [
-                    const Icon(Icons.wb_sunny_outlined),
-                    const SizedBox(width: 4),
-                    Text('${widget.numDiarias} Diárias'),
-                    const SizedBox(width: 8),
-                    const Icon(Icons.person_outline),
-                    const SizedBox(width: 4),
-                    Text('${widget.numPessoas} Pessoas'),
-                  ],
-                ),
-                SizedBox(height: 8),
-                Text('A partir de R\$ ${widget.precoAntigo}'),
-                Text(
-                  'R\$ ${widget.precoAtual}',
-                  style: const TextStyle(
-                    color: Colors.orange,
-                    fontSize: 28,
-                    fontWeight: FontWeight.bold,
+                  SizedBox(height: 8),
+                  Text(widget.pacoteTuristico.transporte),
+                  SizedBox(height: 8),
+                  Row(
+                    children: [
+                      const Icon(Icons.wb_sunny_outlined),
+                      const SizedBox(width: 4),
+                      Text('${widget.pacoteTuristico.numDiarias} Diárias'),
+                      const SizedBox(width: 8),
+                      const Icon(Icons.person_outline),
+                      const SizedBox(width: 4),
+                      Text('${widget.pacoteTuristico.numPessoas} Pessoas'),
+                    ],
                   ),
-                ),
-                const SizedBox(height: 8),
-                Text(
-                  'Cancelamento Grátis!',
-                  style: TextStyle(
-                    color: Colors.green[700],
+                  SizedBox(height: 8),
+                  Text('A partir de R\$ ${widget.pacoteTuristico.precoAntigo}'),
+                  Text(
+                    'R\$ ${widget.pacoteTuristico.precoAtual}',
+                    style: const TextStyle(
+                      color: Colors.orange,
+                      fontSize: 28,
+                      fontWeight: FontWeight.bold,
+                    ),
                   ),
-                ),
-              ],
-            ),
-          )
-        ],
+                  const SizedBox(height: 8),
+                  Text(
+                    'Cancelamento Grátis!',
+                    style: TextStyle(
+                      color: Colors.green[700],
+                    ),
+                  ),
+                ],
+              ),
+            )
+          ],
+        ),
       ),
     );
   }
@@ -92,16 +96,13 @@ class _CardPacoteTuristicoState extends State<CardPacoteTuristico> {
           borderRadius: const BorderRadius.vertical(
             top: Radius.circular(8),
           ),
-          child: Image.network(widget.imagem),
+          child: Image.network(widget.pacoteTuristico.imagem),
         ),
         Container(
           child: const Text(
             '-45%',
             style: TextStyle(
-              fontSize: 15,
-              color: Colors.white,
-              fontWeight: FontWeight.bold
-            ),
+                fontSize: 15, color: Colors.white, fontWeight: FontWeight.bold),
           ),
           decoration: const BoxDecoration(
             color: Color(0xFFfd6c00),

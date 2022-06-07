@@ -1,3 +1,4 @@
+import 'package:aula_913/domain/pacote_turistico.dart';
 import 'package:aula_913/pages/propaganda_page.dart';
 import 'package:aula_913/widget/pacote_turistico_card.dart';
 import 'package:flutter/material.dart';
@@ -10,6 +11,34 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  PacoteTuristico pacote1 = PacoteTuristico(
+    imagem:
+        'https://a.cdn-hotels.com/gdcs/production97/d402/6baff29c-e43b-4caf-a9e8-5dcf1279dea0.jpg?impolicy=fcrop&w=800&h=533&q=medium',
+    titulo: 'Pacote Cancún 2022/2023',
+    transporte: 'Aéreo - Hotel All inclusive',
+    cidade: 'CANCÚN, MEX',
+    validade: 'De 10 ago 2021 até 30 set 2022',
+    desconto: 45,
+    numDiarias: 5,
+    numPessoas: 2,
+    numParcelas: 6,
+    precoAntigo: 6819,
+    precoAtual: 2819,
+  );
+  PacoteTuristico pacote2 = PacoteTuristico(
+    imagem: 'https://letsdive.com.br/wp-content/uploads/2019/04/PROCURANDO-MERGULHO-EM-MARAGOGI-CONSIDERE-MACEIO.png',
+    titulo: 'Pacote Maragogi 2023',
+    transporte: 'Hotel All inclusive',
+    cidade: 'MARAGOGI, BRA',
+    validade: 'De 10 jan 2022 até 31 dez 2023',
+    desconto: 45,
+    numDiarias: 7,
+    numPessoas: 3,
+    numParcelas: 12,
+    precoAntigo: 4819,
+    precoAtual: 819,
+  );
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -80,28 +109,8 @@ class _HomePageState extends State<HomePage> {
               ),
             ),
             const SizedBox(height: 16),
-            const CardPacoteTuristico(
-              imagem:
-                  'https://a.cdn-hotels.com/gdcs/production97/d402/6baff29c-e43b-4caf-a9e8-5dcf1279dea0.jpg?impolicy=fcrop&w=800&h=533&q=medium',
-              titulo: 'Pacote Cancún 2022/2023',
-              transporte: 'Aéreo - Hotel All inclusive',
-              numDiarias: 5,
-              numPessoas: 2,
-              numParcelas: 6,
-              precoAntigo: 6819,
-              precoAtual: 2819,
-            ),
-            const CardPacoteTuristico(
-              imagem:
-                  'https://letsdive.com.br/wp-content/uploads/2019/04/PROCURANDO-MERGULHO-EM-MARAGOGI-CONSIDERE-MACEIO.png',
-              titulo: 'Pacote Maragogi 2023',
-              transporte: 'Hotel All inclusive',
-              numDiarias: 7,
-              numPessoas: 3,
-              numParcelas: 12,
-              precoAntigo: 4819,
-              precoAtual: 819,
-            )
+            CardPacoteTuristico(pacoteTuristico: pacote1),
+            CardPacoteTuristico(pacoteTuristico: pacote2),
           ],
         ),
       ),
