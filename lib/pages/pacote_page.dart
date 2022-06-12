@@ -130,14 +130,4 @@ class _PacotePageState extends State<PacotePage> {
     );
   }
 
-  void onPressedButton() {
-    Navigator.push(
-      context,
-      MaterialPageRoute(
-        builder: (context) {
-          return const PropagandaPage();
-        },
-      ),
-    );
-  }
 }
