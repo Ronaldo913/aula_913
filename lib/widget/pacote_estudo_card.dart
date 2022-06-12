@@ -1,20 +1,20 @@
-import 'package:aula_913/domain/pacote_turistico.dart';
+import 'package:aula_913/domain/pacote_estudo.dart';
 import 'package:aula_913/pages/pacote_detalhes.dart';
 import 'package:flutter/material.dart';
 
-class CardPacoteTuristico extends StatefulWidget {
-  final PacoteTuristico pacoteTuristico;
+class CardPacoteEstudo extends StatefulWidget {
+  final PacoteEstudo pacoteEstudo;
 
-  const CardPacoteTuristico({
+  const CardPacoteEstudo({
     Key? key,
-    required this.pacoteTuristico,
+    required this.pacoteEstudo,
   }) : super(key: key);
 
   @override
-  _CardPacoteTuristicoState createState() => _CardPacoteTuristicoState();
+  _CardPacoteEstudoState createState() => _CardPacoteEstudoState();
 }
 
-class _CardPacoteTuristicoState extends State<CardPacoteTuristico> {
+class _CardPacoteEstudoState extends State<CardPacoteEstudo> {
   @override
   Widget build(BuildContext context) {
     return InkWell(
@@ -24,7 +24,7 @@ class _CardPacoteTuristicoState extends State<CardPacoteTuristico> {
           MaterialPageRoute(
             builder: (context) {
               return PacoteDetalhes(
-                pacoteTuristico: widget.pacoteTuristico,
+                pacoteEstudo: widget.pacoteEstudo,
               );
             },
           ),
@@ -43,30 +43,30 @@ class _CardPacoteTuristicoState extends State<CardPacoteTuristico> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    widget.pacoteTuristico.titulo,
+                    widget.pacoteEstudo.titulo,
                     style: const TextStyle(
                       fontSize: 21,
                       fontWeight: FontWeight.bold,
                     ),
                   ),
                   SizedBox(height: 8),
-                  Text(widget.pacoteTuristico.transporte),
+                  Text(widget.pacoteEstudo.transporte),
                   SizedBox(height: 8),
                   Row(
                     children: [
                       const Icon(Icons.wb_sunny_outlined),
                       const SizedBox(width: 4),
-                      Text('${widget.pacoteTuristico.numDiarias} Diárias'),
+                      Text('${widget.pacoteEstudo.numDiarias} Diárias'),
                       const SizedBox(width: 8),
                       const Icon(Icons.person_outline),
                       const SizedBox(width: 4),
-                      Text('${widget.pacoteTuristico.numPessoas} Pessoas'),
+                      Text('${widget.pacoteEstudo.numPessoas} Pessoas'),
                     ],
                   ),
                   SizedBox(height: 8),
-                  Text('A partir de R\$ ${widget.pacoteTuristico.precoAntigo}'),
+                  Text('A partir de R\$ ${widget.pacoteEstudo.precoAntigo}'),
                   Text(
-                    'R\$ ${widget.pacoteTuristico.precoAtual}',
+                    'R\$ ${widget.pacoteEstudo.precoAtual}',
                     style: const TextStyle(
                       color: Colors.orange,
                       fontSize: 28,
@@ -96,7 +96,7 @@ class _CardPacoteTuristicoState extends State<CardPacoteTuristico> {
           borderRadius: const BorderRadius.vertical(
             top: Radius.circular(8),
           ),
-          child: Image.network(widget.pacoteTuristico.imagem),
+          child: Image.network(widget.pacoteEstudo.imagem),
         ),
         Container(
           child: const Text(
