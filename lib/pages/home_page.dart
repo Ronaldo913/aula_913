@@ -1,6 +1,6 @@
-import 'package:aula_913/domain/pacote_turistico.dart';
+import 'package:aula_913/domain/pacote_estudo.dart';
 import 'package:aula_913/pages/propaganda_page.dart';
-import 'package:aula_913/widget/pacote_turistico_card.dart';
+import 'package:aula_913/widget/pacote_estudo_card.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatefulWidget {

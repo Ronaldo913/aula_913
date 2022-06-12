@@ -1,4 +1,4 @@
-import 'package:aula_913/domain/pacote_turistico.dart';
+import 'package:aula_913/domain/pacote_estudo.dart';
 import 'package:flutter/material.dart';
 
 class PacoteDetalhes extends StatefulWidget {
