@@ -1,4 +1,4 @@
-class PacoteTuristico {
+class PacoteEstudo {
   final String imagem;
   final String titulo;
   final String validade;
@@ -11,7 +11,7 @@ class PacoteTuristico {
   final double precoAtual;
   final double precoAntigo;
 
-  PacoteTuristico({
+  PacoteEstudo({
     required this.validade,
     required this.cidade,
     required this.desconto,

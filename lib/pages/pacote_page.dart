@@ -80,7 +80,7 @@ class _PacotePageState extends State<PacotePage> {
                       crossAxisAlignment: CrossAxisAlignment.stretch,
                       children: [
                         const Text(
-                          'Tops destinos mais buscados',
+                          'Acrescente ao seu aprendizado esses regalias',
                           style: TextStyle(
                             fontSize: 24,
                             color: Colors.white,
@@ -95,19 +95,6 @@ class _PacotePageState extends State<PacotePage> {
                           ),
                         ),
                         const SizedBox(height: 16),
-                        ElevatedButton(
-                          onPressed: onPressedButton,
-                          child: const Text(
-                            'EU QUERO!',
-                            style: TextStyle(
-                              fontSize: 15,
-                              color: Colors.black,
-                            ),
-                          ),
-                          style: ElevatedButton.styleFrom(
-                            primary: Color(0xFFF8FF04),
-                          ),
-                        )
                       ],
                     ),
                   ),
