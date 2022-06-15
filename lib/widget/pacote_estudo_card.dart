@@ -82,6 +82,17 @@ class _CardPacoteEstudoState extends State<CardPacoteEstudo> {
                   ),
                 ],
               ),
+              child: center(
+                child: RaisedButton(
+                  onPressed: () {
+                    Navigator.push(
+                      context, 
+                      MaterialPageRoute(
+                        builder: (BuildContext context) => PacotePagamentoPage()));
+                  },
+                  child: text("Adquirir plano"),
+                ),
+              ),
             )
           ],
         ),
