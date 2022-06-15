@@ -80,14 +80,6 @@ class _CardPacoteEstudoState extends State<CardPacoteEstudo> {
                       color: Colors.green[700],
                     ),
                   ),
-                  ElevatedButton(
-                    onPressed: () => toScreenThree(),
-                    style: ElevatedButton.styleFrom(
-                      primary: Colors.purple,
-                      onPrimary: Colors.white,
-                    ),
-                  child: Text('Ir para a página 3 ->'),
-                 ),
                 ],
               ),
             )
