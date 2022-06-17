@@ -1,5 +1,8 @@
 
 import 'package:flutter/material.dart';
+import 'package:aula_913/domain/pacote_estudo.dart';
+import 'package:aula_913/pages/pacote_detalhes.dart';
+import 'package:aula_913/widget/pacote_estudo_card.dart';
 
 class PacotePage extends StatefulWidget {
   const PacotePage({Key? key}) : super(key: key);
@@ -108,9 +111,9 @@ class _PacotePageState extends State<PacotePage> {
               ),
             ),
             const SizedBox(height: 16),
-            CardPacoteTuristico(pacoteEstudo: pacote1),
-            CardPacoteTuristico(pacoteEstudo: pacote2),
-            CardPacoteTuristico(pacoteEstudo: pacote3),
+            CardPacoteEstudo(pacoteEstudo: pacote1),
+            CardPacoteEstudo(pacoteEstudo: pacote2),
+            CardPacoteEstudo(pacoteEstudo: pacote3),
           ],
         ),
       ),

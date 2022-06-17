@@ -2,11 +2,11 @@ import 'package:aula_913/domain/pacote_estudo.dart';
 import 'package:flutter/material.dart';
 
 class PacoteDetalhes extends StatefulWidget {
-  final PacoteTuristico pacoteTuristico;
+  final PacoteEstudo pacoteEstudo;
 
   const PacoteDetalhes({
     Key? key,
-    required this.pacoteTuristico,
+    required this.pacoteEstudo,
   }) : super(key: key);
 
   @override
@@ -14,7 +14,7 @@ class PacoteDetalhes extends StatefulWidget {
 }
 
 class _PacoteDetalhesState extends State<PacoteDetalhes> {
-  PacoteTuristico get pacote => widget.pacoteTuristico;
+  PacoteEstudo get pacote => widget.pacoteEstudo;
 
   @override
   Widget build(BuildContext context) {
